@@ -32,3 +32,6 @@ fvtt package workon "my-new-module" --type "Module"
 ```bash
 fvtt launch
 ```
+
+# Good links:
+- https://github.com/League-of-Foundry-Developers/FoundryVTT-Module-Template
