@@ -1,0 +1,50 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+	"name": "Node.js",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers-extra/features/npm-package:1": {}
+	},
+	"workspaceFolder": "/workspace",
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/workspace,type=bind",
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+	],
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "",
+
+	// Configure fvtt on container start
+	"postStartCommand": "if [ -x /opt/foundryvtt/foundryvtt ]; then echo '\n\n✓ Foundry VTT installed successfully'; fvtt configure set installPath /opt/foundryvtt && fvtt configure set dataPath /workspace/data; else echo '\n\n⚠ FoundryVTT-Linux-*.zip not found in .devcontainer directory - Foundry VTT not installed'; fi",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				// "redhat.vscode-yaml",
+				"github.copilot",
+				"github.copilot-chat",
+				"pkief.material-icon-theme",
+				"ms-azuretools.vscode-docker"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"workbench.iconTheme": "material-icon-theme",
+				"explorer.compactFolders": false
+			}
+		}
+	},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "root"
+}

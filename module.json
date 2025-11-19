@@ -1,0 +1,149 @@
+{
+  "id": "my-new-module",
+  "title": "My New Module",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "description": "<p>Description</p>",
+  "authors": [
+    {
+      "name": "Author 1",
+      "email": "email1@email.com",
+      "url": "website1.com",
+      "discord": "discord-author-1",
+      "flags": {}
+    },
+    {
+      "name": "Author 2",
+      "email": "email2@email.com",
+      "url": "website2.com",
+      "discord": "discord-author-2",
+      "flags": {}
+    }
+  ],
+  "url": "packageurl.com",
+  "flags": {
+    "canUpload": true
+  },
+  "packs": [
+    {
+      "name": "pack-actor",
+      "label": "Label-Actor",
+      "path": "packs/pack-actor",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    },
+    {
+      "name": "pack-adventure",
+      "label": "Label-Adventure",
+      "path": "packs/pack-adventure",
+      "type": "Adventure",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    },
+    {
+      "name": "pack-card-stack",
+      "label": "Label-Card-stack",
+      "path": "packs/pack-card-stack",
+      "type": "Cards",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    },
+    {
+      "name": "pack-item",
+      "label": "Label-Item",
+      "path": "packs/pack-item",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    },
+    {
+      "name": "pack-journal-entry",
+      "label": "Label-Journal-Entry",
+      "path": "packs/pack-journal-entry",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    },
+    {
+      "name": "pack-macro",
+      "label": "Label-Macro",
+      "path": "packs/pack-macro",
+      "type": "Macro",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    },
+    {
+      "name": "pack-playlist",
+      "label": "Label-Playlist",
+      "path": "packs/pack-playlist",
+      "type": "Playlist",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    },
+    {
+      "name": "pack-rollable-table",
+      "label": "Label-Rollable-Table",
+      "path": "packs/pack-rollable-table",
+      "type": "RollTable",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    },
+    {
+      "name": "pack-scene",
+      "label": "Label-Scene",
+      "path": "packs/pack-scene",
+      "type": "Scene",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  }
+}
