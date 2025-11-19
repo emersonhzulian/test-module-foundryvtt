@@ -25,7 +25,7 @@
 	// "postCreateCommand": "",
 
 	// Configure fvtt on container start
-	"postStartCommand": "if [ -x /opt/foundryvtt/foundryvtt ]; then echo '\n\n✓ Foundry VTT installed successfully'; fvtt configure set installPath /opt/foundryvtt && fvtt configure set dataPath /workspace/data; else echo '\n\n⚠ FoundryVTT-Linux-*.zip not found in .devcontainer directory - Foundry VTT not installed'; fi",
+	"postStartCommand": "if [ -x /opt/foundryvtt/foundryvtt ]; then echo '\n\n✓ Foundry VTT installed successfully'; fvtt configure set installPath /opt/foundryvtt && fvtt configure set dataPath /workspace/data && fvtt package workon \"$(jq -r '.id' /workspace/module.json)\" --type \"Module\"; else echo '\n\n⚠ FoundryVTT-Linux-*.zip not found in .devcontainer directory - Foundry VTT not installed'; fi",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -35,12 +35,48 @@
 				"github.copilot",
 				"github.copilot-chat",
 				"pkief.material-icon-theme",
-				"ms-azuretools.vscode-docker"
+				"ms-azuretools.vscode-docker",
+				"seunlanlege.action-buttons"
 			],
 			"settings": {
 				"terminal.integrated.defaultProfile.linux": "bash",
 				"workbench.iconTheme": "material-icon-theme",
-				"explorer.compactFolders": false
+				"explorer.compactFolders": false,
+				"actionButtons": {
+					"defaultColor": "#ff0034",
+					"loadNpmCommands": false,
+					"reloadButton": null,
+					"commands": [
+						{
+							"cwd": "/workspace",
+							"name": "🔓 Unpack All",
+							"color": "green",
+							"singleInstance": true,
+							"command": "./unpack.sh"
+						},
+						{
+							"cwd": "/workspace",
+							"name": "📦 Pack All",
+							"color": "blue",
+							"singleInstance": true,
+							"command": "./pack.sh"
+						},
+						{
+							"cwd": "/workspace",
+							"name": "🧹 Clean & Copy",
+							"color": "orange",
+							"singleInstance": true,
+							"command": "./clean.sh"
+						},
+						{
+							"cwd": "/workspace",
+							"name": "🚀 Launch Foundry",
+							"color": "purple",
+							"singleInstance": true,
+							"command": "fvtt launch"
+						}
+					]
+				}
 			}
 		}
 	},
