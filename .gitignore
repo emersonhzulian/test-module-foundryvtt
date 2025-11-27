@@ -9,3 +9,4 @@ yarn.lock
 data/
 **/_source/
 .devcontainer/FoundryVTT-Linux-*
+opt/
